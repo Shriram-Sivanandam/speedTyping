@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Typing</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body class="text-white main">
+    <header id="header">
+        <h1>Speed Typing</h1>
+    </header>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-6 mx-auto"> 
+                <p class="lead">Try your best to type the given word within <span class="text-success" id="seconds">5</span> seconds:</p>
+                <h2 class="display-2 mb-5" id="current-word">hello</h2>
+                <input type="text" class="form-control form-control-lg" placeholder="Start typing..." id="word-input" autofocus>
+                <h4 class="mt-3" id="message"></h4>
+
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <h3>Time left: <span id="time">0</span></h3>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Score: <span id="score">0</span></h3>
+                    </div>
+
+                    <h6 class="drop-heading">Select difficulty by time:</h6>
+                    <select name="drop" id="dropdown" class="custom-select" onchange="difficultyChange(this)">
+                        <option value="easy">Easy - 5 seconds per word</option>
+                        <option value="medium">Medium - 3 seconds per word</option>
+                        <option value="hard">Hard - 2 seconds per word</option>
+                    </select>
+
+                    <br>
+
+                    <h6 class="drop-heading">Select difficulty by length of words:</h6>
+                    <select name="dropword" id="dropdown-word" class="custom-select" onchange="wordChange(this)">
+                        <option value="easy">Easy - short words</option>
+                       <option value="medium">Medium - medium sized words</option>
+                       <option value="hard">Hard - long words</option>
+                   </select>
+                </div>
+
+                <button class="btn-lg btn-primary" id="start" onclick="startGame()">Start</button>
+
+                <div class="row mt-5">
+                    <div class="col-md-12">
+                        <div class="card card-body bg-secondary text-white">
+                            <h5>Instructions</h5>
+                            <p>Type each word in the given amount of time to score one point. To play again just type the current word. This will reset your score letting you start again.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/home.js"></script>
+</body>
+</html>
